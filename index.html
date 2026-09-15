@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online calculators - Yongze Song</title>
+<meta name="description" content="Six open-source online calculators for spatial methods (GCF, OPGD, GC, LISP, DSI, GOS). Each runs entirely in the browser with WebAssembly R; no data leaves your computer.">
+<link rel="canonical" href="https://yongzesong.com/app/">
+<link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&amp;family=Source+Sans+3:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+    /* Page-local layout; the shared look comes from ../assets/css/style.css */
+    .apps-content {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .apps-content h1 {
+        font-size: 1.6rem;
+        margin: 0.4em 0 0.3em 0;
+    }
+    .apps-intro {
+        font-size: 0.95rem;
+        color: var(--color-muted);
+        max-width: 760px;
+        margin-bottom: 1.4em;
+    }
+    .apps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+        margin-bottom: 1.6em;
+    }
+    .app-card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 18px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        text-decoration: none;
+        color: inherit;
+        background: #fff;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .app-card:hover {
+        border-color: var(--color-accent);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        color: inherit;
+    }
+    .app-card img {
+        flex: 0 0 auto;
+        width: 56px;
+        height: 62px;
+    }
+    .app-card .app-abbr {
+        display: block;
+        font-family: var(--font-serif);
+        font-weight: 600;
+        font-size: 1.15rem;
+        line-height: 1.3;
+        color: var(--color-heading);
+    }
+    .app-card .app-full {
+        display: block;
+        font-size: 0.85rem;
+        line-height: 1.35;
+        color: var(--color-muted);
+    }
+    .app-card .app-open {
+        display: block;
+        margin-top: 4px;
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: var(--color-accent);
+        letter-spacing: 0.02em;
+    }
+    .apps-note {
+        font-size: 0.85rem;
+        color: var(--color-muted);
+        border-top: 1px solid #eee;
+        padding-top: 12px;
+        max-width: 760px;
+    }
+    .apps-note a { color: inherit; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header">
+    <div class="header-inner">
+        <a href="../index.html" class="site-title">
+            Yongze Song
+            <span>Geography &amp; Sustainability</span>
+        </a>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../publications.html">Publications</a>
+            <a href="../methods.html">Methods</a>
+            <a href="../blogs.html">Blogs</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ========== MAIN CONTENT ========== -->
+<main id="main">
+<div class="apps-content">
+    <h1>Online calculators</h1>
+    <p class="apps-intro">Open-source calculators for six spatial methods. Load the built-in example or upload your own CSV, set the parameters, and download the tables and figures.</p>
+
+    <div class="apps-grid">
+        <a class="app-card" href="gcf/" title="Open the online GCF calculator">
+            <img src="gcf/favicon.svg" alt="GCF hex logo" width="56" height="62" decoding="async">
+            <span>
+                <span class="app-abbr">GCF calculator</span>
+                <span class="app-full">Generalized covariate field</span>
+                <span class="app-open">Open &rarr;</span>
+            </span>
+        </a>
+        <a class="app-card" href="opgd/" title="Open the online OPGD calculator">
+            <img src="opgd/favicon.svg" alt="OPGD hex logo" width="56" height="62" decoding="async">
+            <span>
+                <span class="app-abbr">OPGD calculator</span>
+                <span class="app-full">Optimal parameters-based geographical detector</span>
+                <span class="app-open">Open &rarr;</span>
+            </span>
+        </a>
+        <a class="app-card" href="gc/" title="Open the online GC calculator">
+            <img src="gc/favicon.svg" alt="GC hex logo" width="56" height="62" decoding="async">
+            <span>
+                <span class="app-abbr">GC calculator</span>
+                <span class="app-full">Geocomplexity</span>
+                <span class="app-open">Open &rarr;</span>
+            </span>
+        </a>
+        <a class="app-card" href="lisp/" title="Open the online LISP calculator">
+            <img src="lisp/favicon.svg" alt="LISP hex logo" width="56" height="62" decoding="async">
+            <span>
+                <span class="app-abbr">LISP calculator</span>
+                <span class="app-full">Local indicator of stratified power</span>
+                <span class="app-open">Open &rarr;</span>
+            </span>
+        </a>
+        <a class="app-card" href="dsi/" title="Open the online DSI calculator">
+            <img src="dsi/favicon.svg" alt="DSI hex logo" width="56" height="62" decoding="async">
+            <span>
+                <span class="app-abbr">DSI calculator</span>
+                <span class="app-full">Degree of spatial interpretability</span>
+                <span class="app-open">Open &rarr;</span>
+            </span>
+        </a>
+        <a class="app-card" href="gos/" title="Open the online GOS calculator">
+            <img src="gos/favicon.svg" alt="GOS hex logo" width="56" height="62" decoding="async">
+            <span>
+                <span class="app-abbr">GOS calculator</span>
+                <span class="app-full">Geographically optimal similarity</span>
+                <span class="app-open">Open &rarr;</span>
+            </span>
+        </a>
+    </div>
+
+    <p class="apps-note">All calculators run entirely in your browser (R compiled to WebAssembly via <a href="https://shiny.posit.co/py/docs/shinylive.html">Shinylive</a>/webR): nothing is uploaded, and no data leave your computer. The first visit downloads about 65&nbsp;MB of runtime plus the packages an app needs; it can take a minute on a slow connection. The R packages behind the methods are listed on the <a href="../methods.html#software">Methods</a> page.</p>
+</div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-col">
+            <h3>Site</h3>
+            <a href="../about.html">About</a>
+            <a href="../publications.html">Publications</a>
+            <a href="../methods.html">Methods</a>
+            <a href="../blogs.html">Blogs</a>
+        </div>
+        <div class="footer-col">
+            <h3>Series</h3>
+            <a href="../reproduce/index.html">Tutorials for reproducing models</a>
+            <a href="../gcf/index.html">Generalized covariate field</a>
+            <a href="../blogs.html#trainings">Trainings and presentations</a>
+        </div>
+        <div class="footer-col">
+            <h3>Software</h3>
+            <a href="../methods.html#software">R packages</a>
+            <a href="./">Online calculators</a>
+        </div>
+        <div class="footer-col">
+            <h3>Lab &amp; Team</h3>
+            <a href="../lab.html">Geospatial Intelligence Lab</a>
+            <a href="https://spatialmethods.org/">Intl. Society for Spatial Methods</a>
+            <a href="https://sdl.gis.harvard.edu/fellows">Harvard Spatial Data Lab</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-left">
+            <span class="footer-copyright">&copy; 2026 Yongze Song</span>
+            <div class="footer-social">
+                <a href="https://scholar.google.com/citations?user=bNuxvgIAAAAJ&amp;hl=en" title="Google Scholar"><img src="../assets/images/googlescholar.png" alt="Scholar" loading="lazy" decoding="async"></a>
+                <a href="https://www.researchgate.net/profile/Yongze-Song" title="ResearchGate"><img src="../assets/images/researchgate.png" alt="ResearchGate" loading="lazy" decoding="async"></a>
+                <a href="https://orcid.org/0000-0003-3420-9622" title="ORCID"><img src="../assets/images/orcid-1.png" alt="ORCID" loading="lazy" decoding="async"></a>
+                <a href="https://www.linkedin.com/in/yongzesong/" title="LinkedIn"><img src="../assets/images/linkedin-black-icon-5-2322292596-e1682078661908.png" alt="LinkedIn" loading="lazy" decoding="async"></a>
+                <a href="https://x.com/YongzeSong" title="X (formerly Twitter)"><img src="../assets/images/x-logo.svg" alt="X" loading="lazy" decoding="async"></a>
+            </div>
+            <a href="../cn.html" class="footer-lang">中文</a>
+        </div>
+        <div class="footer-right">
+            <a href="https://spatialmethods.org/"><img src="../assets/images/logo_v02.png" alt="International Society for Spatial Methods" loading="lazy" decoding="async"></a>
+            <a href="../lab.html"><img src="../assets/images/logo_03.png" alt="Geospatial Intelligence Lab" loading="lazy" decoding="async"></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
